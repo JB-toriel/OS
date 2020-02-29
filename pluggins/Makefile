@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-W -Wall -Werror -ldl
+CFLAGS=-W -Wall -ldl
 EXEC=appli
 
 

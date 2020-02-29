@@ -1,6 +1,6 @@
 #include "source/libfunction.h"
 
-void hello_plug2( void )
+void function2( void )
 {
-    printf("Hello world\n");
+    printf("Hello world 2 !\n");
 }

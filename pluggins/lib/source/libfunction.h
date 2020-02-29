@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void hello_plug( void );
-void hello_plug2( void );
+void function( void );
+void function2( void );
 
 #endif
