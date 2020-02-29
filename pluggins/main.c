@@ -20,7 +20,7 @@ int main( int argc , char* argv[] ) {
     void (*hello_plug)(void);
 
     // open the library ..hopefully 
-    if ( (handle = dlopen("lib/libfunction.so", RTLD_LAZY)) == NULL) {
+    if ( (handle = dlopen(libname, RTLD_LAZY)) == NULL) {
         perror("dlopen : ");
         exit(EXIT_FAILURE);
     }
