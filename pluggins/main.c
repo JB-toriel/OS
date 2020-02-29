@@ -15,18 +15,24 @@ int main( int argc , char* argv[] ) {
     // name of the lib to use
     char* libname="lib/";
     asprintf(&libname, "%s%s%s%s", libname, "lib", argv[argc-1], ".so");
+
+    void *handle;
+
     // function pointer for the library's double_me() function
     void (*hello_plug)(void);
 
     // open our library ..hopefully
     
     if ( (handle = dlopen(libname, RTLD_LAZY)) == NULL) {
+
+    if ( (handle = dlopen("lib/libfunction.so", RTLD_LAZY)) == NULL) {
         perror("dlopen : ");
         exit(EXIT_FAILURE);
     }
 
     // try to extract "double_me" symbol from the library
     hello_plug = dlsym(handle, argv[argc-1]);
+    hello_plug = dlsym(handle, "hello_plug");
     if (dlerror() != NULL) {
 	dlclose(handle);
         exit(EXIT_FAILURE);
@@ -37,6 +43,12 @@ int main( int argc , char* argv[] ) {
           hello_plug();
       }
     }*/
+
+    if ( argc>1 ){
+      if ( !strcmp( argv[1], "hello" ) ){
+          hello_plug();
+      }
+    }
 
     dlclose(handle);
 
