@@ -6,10 +6,9 @@
 #include <errno.h>
 #include <dlfcn.h>
 #include <string.h>
-#include "lib/source/libfunction.h"
-
 
 int main( int argc , char* argv[] ) {
+
     // handle for dynamic loading functions
     void *handle=NULL;
     // name of the lib to use

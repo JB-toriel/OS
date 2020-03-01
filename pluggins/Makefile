@@ -1,16 +1,15 @@
 CC=gcc
-CFLAGS=-W -Wall -ldl
 CFLAGS=-W -Wall -Werror -ldl
 EXEC=appli
 
 
-all: build-appli build-plugins
+all: appli plugins
 
 
-build-appli: main.c
+appli: main.c
 	@$(CC) $< -o $(EXEC) $(CFLAGS)
 	
-build-plugins:
+plugins:
 	@cd lib && make && cd ..
 
 
